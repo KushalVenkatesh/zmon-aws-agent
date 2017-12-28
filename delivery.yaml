@@ -8,10 +8,11 @@ pipeline:
           apt-get install -q -y --no-install-recommends \
             git \
             python3.5 \
-            python3-pip
+            python3-pip \
+            python3-setuptools
 
           curl -fLOsS https://delivery.cloud.zalando.com/utils/ensure-docker && sh ensure-docker && rm ensure-docker
-          pip install -U flake8
+          pip3 install -U flake8
 
       - desc: "Flake 8"
         cmd: |
